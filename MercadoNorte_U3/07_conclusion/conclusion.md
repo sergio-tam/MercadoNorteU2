@@ -13,7 +13,7 @@
 3. Las ventas de e-commerce/app se atribuyen a la sucursal que surte; la región no es la del cliente.
 4. Los datos son simulados con semilla fija; los hallazgos ilustran el método, no la operación real.
 5. Solo Q1 y Q2 de 2026 son trimestres completos; las llamadas con otros trimestres comparan contra periodos parciales.
-6. **Evidencia pendiente:** el error 1055, el EXPLAIN de MySQL y la ejecución del stored procedure deben correrse en MySQL 8 (`ejecutar_todo_mysql.sh`); aquí solo se validó la lógica en SQLite.
+6. El EXPLAIN de MySQL muestra un cambio de método de acceso (escaneo completo → rango por índice; índice cubriente en el hecho), pero el costo estimado no es comparable entre planes y no se miden tiempos; con ~27 mil filas no se afirma una mejora de velocidad.
 
 **Aprendizaje sobre el uso de IA**
 La IA entregó una consulta casi correcta, pero tres defectos solo aparecieron al contrastar con el modelo y con datos de borde: el `RANK()` rompe el "máximo 5" con empates, la variación no distinguía "sin datos" de "base cero", y los periodos estaban fijos. Ninguno se ve leyendo el SQL con prisa; se detectaron porque se sembraron casos límite y se compararon totales con consultas de control. La IA acelera el borrador; la validación contra el grano y las reglas del negocio sigue siendo responsabilidad del equipo.
