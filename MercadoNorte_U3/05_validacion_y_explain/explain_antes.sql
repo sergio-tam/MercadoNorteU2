@@ -1,5 +1,6 @@
 /* Reto 3 · EXPLAIN ANTES de crear índices nuevos (solo PK, UNIQUE y FK de InnoDB). Ejecutar en MySQL 8. */
 USE mercado_norte;
+ANALYZE TABLE DIM_TIEMPO, FACT_VENTAS_LINEA;   -- estadísticas actualizadas: comparación justa con 'después'
 SET @anio_act = 2026, @trim_act = 2, @anio_ant = 2026, @trim_ant = 1;
 
 EXPLAIN FORMAT=TREE
