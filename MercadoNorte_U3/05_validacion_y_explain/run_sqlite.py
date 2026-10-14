@@ -24,7 +24,7 @@ ev = [f"# Evidencia de ejecución (SQLite {sqlite3.sqlite_version})\n",
       f"Generado por `run_sqlite.py` el {datetime.datetime.now():%Y-%m-%d %H:%M}. Base: `02_ddl_y_datos/mercado_norte.sqlite`. "
       "Parámetros: " + ", ".join(f"{k}={v}" for k, v in P.items()) + ".\n\n"
       "> Salidas reales del motor SQLite, que comparte con MySQL 8 la sintaxis de CTE y funciones de ventana. "
-      "**No sustituyen** la ejecución en MySQL 8 (ver `evidencia_mysql_PENDIENTE.md`).\n"]
+      "**No sustituyen** la ejecución en MySQL 8 (ver `evidencia_mysql.md`).\n"]
 cx2 = None
 top = run(FINAL, P)  # resultado de la consulta final
 rank1_sur = [r for r in top[1] if r[0] == "Sur Nuevo León" and r[1] == 1][0]

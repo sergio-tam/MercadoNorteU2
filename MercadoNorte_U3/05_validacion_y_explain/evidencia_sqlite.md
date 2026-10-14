@@ -1,7 +1,7 @@
 # Evidencia de ejecución (SQLite 3.45.1)
 Generado por `run_sqlite.py` el 2026-10-13 20:02. Base: `02_ddl_y_datos/mercado_norte.sqlite`. Parámetros: anio_act=2026, trim_act=2, anio_ant=2026, trim_ant=1.
 
-> Salidas reales del motor SQLite, que comparte con MySQL 8 la sintaxis de CTE y funciones de ventana. **No sustituyen** la ejecución en MySQL 8 (ver `evidencia_mysql_PENDIENTE.md`).
+> Salidas reales del motor SQLite, que comparte con MySQL 8 la sintaxis de CTE y funciones de ventana. **No sustituyen** la ejecución en MySQL 8 (ver `evidencia_mysql.md`).
 
 ## V01 · Conteo de filas por tabla
 **Criterio de aprobación:** fact >= 1000
